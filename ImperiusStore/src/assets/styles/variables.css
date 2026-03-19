@@ -1,0 +1,21 @@
+body {
+    background-color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
+    color: var(--color-primaria);
+    font-family: var(--font);
+}
+
+:root {
+    /* FONTES */
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* COR GLOBAL */
+    --background-color: #0D0E10;
+    --color-primaria: #F2F2F2;
+
+    /* NAVBAR */
+    --color-a: white;
+    --color-a-hover: #F2A81D;
+    --background-color-navbar: #191265;
+    --border-navbar: #F2A81D;
+}
