@@ -22,5 +22,6 @@ body {
 
     /* Produtos - carrossel */
     --color-title-text: white;
-    --title-carousel: red;
+    --title-carousel: #F2A81D;
+    --background-color-title-carousel: #191265;
 }

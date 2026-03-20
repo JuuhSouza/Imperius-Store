@@ -16,7 +16,8 @@
           v-show="currentIndex === index"
           class="carousel-item"
         >
-          <img :src="item.image" :alt="item.title">
+        <a href="">  <img :src="item.image" :alt="item.title"></a>
+         
           <div class="caption">{{ item.title }}</div>
         </div>
       </transition-group>
@@ -37,9 +38,19 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const slides = ref([
-  { id: 1, image: 'https://picsum.photos/800/400?random=1', title: 'Projeto de Costura' },
-  { id: 2, image: 'https://picsum.photos/800/400?random=2', title: 'Loom & History' },
-  { id: 3, image: 'https://picsum.photos/800/400?random=3', title: 'Desenvolvimento Web' }
+    {
+        id: 1, image: new URL('../../assets/img/carrosselProdutos_1.png', import.meta.url).href,
+        title: 'Coleiras exclusivas'
+  },
+    {
+        id: 1, image: new URL('../../assets/img/carrosselProdutos_2.png', import.meta.url).href,
+        title: 'Camas sustentáveis'
+  },
+    {
+        id: 1, image: new URL('../../assets/img/carrosselProdutos_3.png', import.meta.url).href,
+        title: 'Guias especiais para seu pet'
+  },
+  
 ]);
 
 const currentIndex = ref(0);
@@ -77,8 +88,8 @@ onUnmounted(() => stopTimer());
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 400px;
+  max-width: 1400px;
+  height: 600px;
   overflow: hidden;
   border-radius: 12px;
   margin: auto;
@@ -107,7 +118,7 @@ onUnmounted(() => stopTimer());
   bottom: 20px;
   left: 20px;
   color: var(--title-carousel);
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--background-color-title-carousel);
   padding: 8px 16px;
   border-radius: 4px;
   z-index: 5;
