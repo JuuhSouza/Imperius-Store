@@ -15,7 +15,12 @@ body {
 
     /* NAVBAR */
     --color-a: white;
+    --color-icon: #F2A81D;
     --color-a-hover: #F2A81D;
     --background-color-navbar: #191265;
     --border-navbar: #F2A81D;
+
+    /* Produtos - carrossel */
+    --color-title-text: white;
+    --title-carousel: red;
 }
