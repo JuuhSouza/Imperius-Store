@@ -48,7 +48,7 @@ const slides = ref([
   },
     {
         id: 1, image: new URL('../../assets/img/carrosselProdutos_3.png', import.meta.url).href,
-        title: 'Guias especiais para seu pet'
+        title: 'Coleiras '
   },
   
 ]);
