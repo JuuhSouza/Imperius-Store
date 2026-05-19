@@ -38,10 +38,9 @@ import { ref, computed } from 'vue';
 
 const indiceAtivo = ref(0);
 
-// Dados do produto (idealmente viriam via Props no futuro)
 const produto = {
   id: '001',
-  nome: "Guia de Corda Náutica Premium",
+  nome: "Coleira para pescoço estampada para cães",
   preco: 120.00,
   variacoes: [
     { cor: 'Vermelho', hex: '#FF0000', url: new URL('../../assets/img/coleira-vermelha.png', import.meta.url).href },
@@ -62,9 +61,9 @@ const abrirProduto = (id) => {
 .card-produto {
   position: relative;
   width: 240px;
-  background: black;
+  background: var(--background-color);
   border-radius: 12px;
-  border: 1px solid blue;
+  border: 1px solid var(--cor-primaria);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
@@ -74,7 +73,7 @@ const abrirProduto = (id) => {
 
 .card-produto:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
   border-color: var(--cor-primaria);
 }
 
@@ -114,7 +113,6 @@ const abrirProduto = (id) => {
   margin: 0 0 8px 0;
   font-weight: 500;
   line-height: 1.2;
-  /* Limita a 2 linhas para não quebrar o layout */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -147,18 +145,18 @@ const abrirProduto = (id) => {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid red;
+  border: 1px solid black;
   padding: 0;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .circulo-cor.selecionado {
-  box-shadow: 0 0 0 2px blue, 0 0 0 4px var(--cor-primaria);
+  box-shadow: 0 0 0 2px var(--cor-primaria), 0 0 0 4px var(--cor-primaria);
 }
 
 .vendas-count {
   font-size: 0.75rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 </style>

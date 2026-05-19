@@ -3,9 +3,9 @@
         <Banner/>
     </section>
     
-    <section >
+    <!-- <section >
         <CarrosselProdutos/>
-    </section>
+    </section> -->
 
     <section class="produtos-destaque">
         <ProdutosCard/>
@@ -15,7 +15,7 @@
 <script>
 import Banner from '../components/Home/Banner.vue'
 import CarrosselProdutos from '../components/Home/CarrosselProdutos.vue';
-import Produtos from '../components/Home/CarrosselProdutos.vue';
+/* import Produtos from '../components/Home/CarrosselProdutos.vue'; */
 import ProdutosCard from '../components/Produtos/ProdutosCard.vue';
 
 export default{
