@@ -1,18 +1,18 @@
 <template>
   <div class="card-wrapper">
-    <router-link :to="`/produto/${produto.id}`" class="card-produto">
+    <router-link :to="`/produto/${props.produto.id}`" class="card-produto">
       <span class="badge-artesanal">Artesanal</span>
 
       <div class="container-foto">
-        <img :src="imagemExibida" :alt="produto.nome" loading="lazy">
+        <img :src="imagemExibida" :alt="props.produto.nome" loading="lazy">
       </div>
 
       <div class="conteudo">
-        <h4 class="titulo-produto">{{ produto.nome }}</h4>
+        <h4 class="titulo-produto">{{ props.produto.nome }}</h4>
 
         <div class="precos">
           <span class="moeda">R$</span>
-          <span class="valor">{{ produto.preco.toFixed(2) }}</span>
+          <span class="valor">{{ props.produto.preco.toFixed(2) }}</span>
         </div>
       </div>
     </router-link>
@@ -20,7 +20,7 @@
     <div class="footer-card">
       <div class="opcoes-cores">
         <button
-          v-for="(item, index) in produto.variacoes"
+          v-for="(item, index) in props.produto.variacoes"
           :key="index"
           class="circulo-cor"
           :title="item.cor"
@@ -32,27 +32,24 @@
       </div>
       <span class="vendas-count">Novo</span>
     </div>
-
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 
-const produto = {
-  id: '001',
-  nome: "Coleira para pescoço estampada para cães",
-  preco: 29.9,
-  variacoes: [
-    { cor: 'Vermelho',        hex: '#FF0000', url: new URL('../../assets/img/coleira-vermelha.png', import.meta.url).href },
-    { cor: 'Amarelo',         hex: '#FFD700', url: new URL('../../assets/img/coleira-amarela.png', import.meta.url).href },
-    { cor: 'Preto camuflado', hex: '#333333', url: new URL('../../assets/img/coleira-camufladaPreta.png', import.meta.url).href }
-  ]
-}
+const props = defineProps({
+  produto: {
+    type: Object,
+    required: true
+  }
+});
 
 const indiceAtivo = ref(0);
 
-const imagemExibida = computed(() => produto.variacoes[indiceAtivo.value].url);
+const imagemExibida = computed(() => props.produto.variacoes[indiceAtivo.value].url);
+
+
 </script>
 
 <style scoped>
