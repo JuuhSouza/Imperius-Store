@@ -65,7 +65,7 @@ const imagemExibida = computed(() => props.produto.variacoes[indiceAtivo.value].
 }
 
 .card-wrapper:hover {
-  transform: translateY(-8px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(128, 128, 128, 0.08);
   border-color: var(--cor-primaria);
 }
