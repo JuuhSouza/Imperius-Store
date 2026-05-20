@@ -1,83 +1,90 @@
 <template>
-  <div class="card-wrapper">
-    <router-link :to="`/produto/${produto.id}`" class="card-produto">
-      <span class="badge-artesanal">Artesanal</span>
+  <router-link 
+    :to="`/produto/${produto.id}`" 
+    class="card-produto"
+    target="_blank" 
+  >
+    <span class="badge-artesanal">Artesanal</span>
 
-      <div class="container-foto">
-        <img :src="imagemExibida" :alt="produto.nome" loading="lazy">
-      </div>
-
-      <div class="conteudo">
-        <h4 class="titulo-produto">{{ produto.nome }}</h4>
-
-        <div class="precos">
-          <span class="moeda">R$</span>
-          <span class="valor">{{ produto.preco.toFixed(2) }}</span>
-        </div>
-      </div>
-    </router-link>
-
-    <div class="footer-card">
-      <div class="opcoes-cores">
-        <button
-          v-for="(item, index) in produto.variacoes"
-          :key="index"
-          class="circulo-cor"
-          :title="item.cor"
-          :style="{ backgroundColor: item.hex }"
-          :class="{ selecionado: indiceAtivo === index }"
-          @click="indiceAtivo = index"
-          aria-label="Selecionar cor"
-        ></button>
-      </div>
-      <span class="vendas-count">Novo</span>
+    <div class="container-foto">
+      <img :src="imagemExibida" :alt="produto.nome" loading="lazy">
     </div>
 
-  </div>
+    <div class="conteudo">
+      <h4 class="titulo-produto">{{ produto.nome }}</h4>
+      
+      <div class="precos">
+        <span class="moeda">R$</span>
+        <span class="valor">{{ produto.preco.toFixed(2) }}</span>
+      </div>
+
+      <div class="footer-card" @click.prevent>
+        <div class="opcoes-cores">
+          <button 
+            v-for="(item, index) in produto.variacoes" 
+            :key="index"
+            class="circulo-cor"
+            :title="item.cor"
+            :style="{ backgroundColor: item.hex }"
+            :class="{ selecionado: indiceAtivo === index }"
+            @click="indiceAtivo = index"
+            aria-label="Selecionar cor"
+          ></button>
+        </div>
+        <span class="vendas-count">Novo</span>
+      </div>
+    </div>
+  </router-link>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 
+const indiceAtivo = ref(0);
+
 const produto = {
   id: '001',
   nome: "Coleira para pescoço estampada para cães",
-  preco: 29.9,
+  preco: 120.00,
   variacoes: [
-    { cor: 'Vermelho',        hex: '#FF0000', url: new URL('../../assets/img/coleira-vermelha.png', import.meta.url).href },
-    { cor: 'Amarelo',         hex: '#FFD700', url: new URL('../../assets/img/coleira-amarela.png', import.meta.url).href },
-    { cor: 'Preto camuflado', hex: '#333333', url: new URL('../../assets/img/coleira-camufladaPreta.png', import.meta.url).href }
+    {
+      cor: 'Vermelho',
+      hex: '#FF0000',
+      url: new URL('../../assets/img/coleira-vermelha.png',import.meta.url).href
+    },
+    {
+      cor: 'Amarelo',
+      hex: '#FFD700',
+      url: new URL('../../assets/img/coleira-amarela.png', import.meta.url).href
+    },
+    {
+      cor: 'Preto camuflado',
+      hex: '#333333', url: new URL('../../assets/img/coleira-camufladaPreta.png', import.meta.url).href
+    }
   ]
-}
-
-const indiceAtivo = ref(0);
+};
 
 const imagemExibida = computed(() => produto.variacoes[indiceAtivo.value].url);
 </script>
 
 <style scoped>
-.card-wrapper {
+.card-produto {
+  text-decoration: none; 
   position: relative;
   width: 240px;
   border-radius: 12px;
   border: 1px solid var(--cor-primaria);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
-.card-wrapper:hover {
+.card-produto:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(128, 128, 128, 0.08);
   border-color: var(--cor-primaria);
-}
-
-.card-produto {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
 }
 
 .badge-artesanal {
@@ -107,7 +114,7 @@ const imagemExibida = computed(() => produto.variacoes[indiceAtivo.value].url);
 }
 
 .conteudo {
-  padding: 12px 12px 0 12px;
+  padding: 12px;
 }
 
 .titulo-produto {
@@ -123,19 +130,20 @@ const imagemExibida = computed(() => produto.variacoes[indiceAtivo.value].url);
 }
 
 .precos {
+  color: var(--cor-primaria);
   font-weight: 600;
   margin-bottom: 12px;
 }
 
-.moeda {
+.moeda { 
   font-size: 0.8rem;
   margin-right: 2px;
   color: var(--cor-valor);
 }
 
 .valor {
-  font-size: 1.2rem;
-  color: var(--cor-valor);
+   font-size: 1.2rem;
+   color: var(--cor-valor);
 }
 
 .footer-card {
@@ -143,7 +151,7 @@ const imagemExibida = computed(() => produto.variacoes[indiceAtivo.value].url);
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--color-border-top);
-  padding: 10px 12px 12px 12px;
+  padding-top: 10px;
 }
 
 .opcoes-cores {

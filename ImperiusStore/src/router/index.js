@@ -1,11 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import DetalhesProduto from '../views/DetalhesProduto.vue'
 
 const routes = [
     {
         path: '/',
         name: 'Home',
         component: Home
+    },
+    {
+        path: '/produto/:id',
+        name: 'Produto',
+        component: DetalhesProduto,
+        props: true
     }
 ]
 

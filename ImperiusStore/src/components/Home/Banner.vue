@@ -104,6 +104,7 @@ export default {
 
 <style scoped>
 .parallax-container {
+  margin-top: 5rem;
   height: 750px;
   position: relative;
   overflow: hidden;
