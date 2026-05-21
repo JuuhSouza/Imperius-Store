@@ -67,7 +67,7 @@ export const produtos = [
     },
     {
         id: '004',
-        nome: "Enforcados para cães",
+        nome: "Coleira enforcador com regulagem para cães",
         preco: 24.9,
         descricao: "Coleira para pescoço estampada para cães, feita com material resistente e confortável, ideal para passeios e atividades ao ar livre.",
         variacoes: [

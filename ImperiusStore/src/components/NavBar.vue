@@ -93,7 +93,6 @@ nav ul a {
 }
 
 nav ul a:hover {
-  /* background: rgba(224, 123, 57, 0.1); */
   color: var(--color-a-hover);
 }
 
@@ -138,7 +137,6 @@ nav ul a:hover .nav-text {
   top: 2em;
   right: 3em;
   background: #e07b39;
-  color: #fff;
   font-size: 0.65rem;
   font-weight: 700;
   width: 16px;

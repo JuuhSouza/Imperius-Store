@@ -20,12 +20,15 @@ body {
     --background-color-navbar: #191265;
     --border-navbar: #F2A81D;
 
-    /* Produtos - carrossel */
+    /* Produtos - carrossel/filtros */
     --color-title-text: white;
     --title-carousel: #F2A81D;
     --title-card: #e0e0e0;
     --color-border-top: #F2A81D;
     --background-color-title-carousel: #191265;
     --cor-valor: #F2A81D;
-    --background-thumb:#f5f5f5;
+    --background-thumb: #f5f5f5;
+    --border-colors: #D3D3D3;
+    --border-line-colors: #F2A81D;
+    --input-color: #F2A81D;
 }
