@@ -18,7 +18,7 @@
               :key="'yt-' + indiceAtivo"
               :src="itemAtivo.url"
               class="midia-principal"
-              frameborder="0"
+              title="video"
               allowfullscreen
             ></iframe>
 
@@ -231,7 +231,6 @@ function selecionarCor(index) {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #555;
   width: fit-content;
 }
 

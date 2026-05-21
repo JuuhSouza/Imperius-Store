@@ -24,7 +24,7 @@ export const produtos = [
     },
     {
         id: '002',
-        nome: "Coleira com engate rápido e regulagem para cães",
+        nome: "Coleira engate rápido com regulagem para cães",
         preco: 29.9,
         descricao: "Coleira para pescoço estampada para cães, feita com material resistente e confortável, ideal para passeios e atividades ao ar livre.",
         variacoes: [
@@ -45,7 +45,7 @@ export const produtos = [
     },
     {
         id: '003',
-        nome: "Coleira com duas argolas para cães",
+        nome: "Coleira duas argolas com regulagem para cães",
         preco: 29.9,
         descricao: "Coleira para pescoço estampada para cães, feita com material resistente e confortável, ideal para passeios e atividades ao ar livre.",
         variacoes: [
@@ -64,16 +64,6 @@ export const produtos = [
                 url: new URL('../assets/video/coleira-passeio.mp4', import.meta.url).href
             }
         ],
-        midia: [
-            {
-                tipo: 'foto',
-                url: new URL('../assets/video/coleira-passeio.mp4', import.meta.url).href
-            },
-            {
-                tipo: 'foto',
-                url: new URL('../assets/video/coleira-passeio.mp4', import.meta.url).href
-            }
-        ]
     },
     {
         id: '004',
